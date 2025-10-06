@@ -1,5 +1,8 @@
-target/
 .git
 .gitignore
+target/*.log
+*.iml
+.idea/
+.vscode/
 Dockerfile
 README.md
