@@ -7,6 +7,13 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
     @GetMapping("/hello")
     public String hello(@RequestParam(defaultValue = "World") String name) {
-        return "Hello, " + name + "!";
+        String result = null;
+        try {
+            result.length(); // This will throw a NullPointerException
+            result = "Hello, " + name + "!";
+        } catch (Exception e) {
+            return "Error: " + e.getMessage();
+        }
+        return result;
     }
 }
